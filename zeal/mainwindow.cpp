@@ -62,11 +62,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QLocalServer::removeServer(serverName);  // remove in case previous instance crashed
     localServer->listen(serverName);
 
-#ifndef WIN32
-    // Default style sometimes (when =windows) doesn't work well with Linux
-    qApp->setStyle(QStyleFactory::create("fusion"));
-#endif
-
     // initialise icons
 #if defined(WIN32) || defined(OSX)
     icon = qApp->style()->standardIcon(QStyle::SP_MessageBoxInformation);
